@@ -1,4 +1,3 @@
-```sql id="igmsi9"
 /*
 Dosya: monthly_sales.sql
 Açıklama: Siparişleri ay bazında gruplayarak toplam satış tutarını listeler.
