@@ -1,0 +1,87 @@
+```yaml
+openapi: 3.0.3
+
+info:
+  title: ShopSphere API
+  description: ShopSphere E-Ticaret Sipariş ve Ödeme Yönetim Sistemi API Dokümantasyonu
+  version: 1.0.0
+
+servers:
+  - url: https://api.shopsphere.local
+
+tags:
+  - name: Authentication
+  - name: Products
+  - name: Cart
+  - name: Orders
+  - name: Payments
+  - name: Returns
+
+paths:
+
+  /api/auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Kullanıcı girişi
+      requestBody:
+        required: true
+      responses:
+        "200":
+          description: Başarılı giriş
+        "401":
+          description: Yetkisiz erişim
+
+  /api/products:
+    get:
+      tags:
+        - Products
+      summary: Ürünleri listele
+      responses:
+        "200":
+          description: Başarılı
+
+    post:
+      tags:
+        - Products
+      summary: Yeni ürün oluştur
+      responses:
+        "201":
+          description: Oluşturuldu
+
+  /api/cart/items:
+    post:
+      tags:
+        - Cart
+      summary: Sepete ürün ekle
+      responses:
+        "201":
+          description: Ürün sepete eklendi
+
+  /api/orders:
+    post:
+      tags:
+        - Orders
+      summary: Sipariş oluştur
+      responses:
+        "201":
+          description: Sipariş oluşturuldu
+
+  /api/payments:
+    post:
+      tags:
+        - Payments
+      summary: Ödeme gerçekleştir
+      responses:
+        "200":
+          description: Ödeme başarılı
+
+  /api/returns:
+    post:
+      tags:
+        - Returns
+      summary: İade talebi oluştur
+      responses:
+        "201":
+          description: İade talebi oluşturuldu
+```
